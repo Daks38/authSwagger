@@ -17,13 +17,10 @@ const router = express.Router();
  *       content:
  *         application/json:
  *           schema:{
- *             User: {
-      type: "object",
-      properties: {
-        id: { type: "string" },
-        email: { type: "string" },
-        password: { type: "string" }
-      }
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
  * }
  *             properties:
  *               email:
@@ -52,7 +49,6 @@ router.post("/", async (req, res) => {
   if (!email) {
     return res.status(400).json({ msg: "Champ email est vide" });
   }
-  
   if (!password) {
     return res.status(400).json({ msg: "Champ mot de passe est vide" });
   }
