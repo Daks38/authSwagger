@@ -52,6 +52,7 @@ router.post("/", async (req, res) => {
   if (!email) {
     return res.status(400).json({ msg: "Champ email est vide" });
   }
+  
   if (!password) {
     return res.status(400).json({ msg: "Champ mot de passe est vide" });
   }
